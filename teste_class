@@ -1,0 +1,97 @@
+class pessoa {
+
+  var nome: String
+  var idade: Int = 0
+  var sexo: Character
+
+  init(nome: String, sexo: Character) {
+  self.nome = nome
+  self.sexo = sexo  
+}
+ 
+func falar(sentence: String) {
+  if idade < 3 {
+    print ("gugu dada")
+  } else {
+    print (sentence)
+  }
+}
+
+func introducao() {
+  falar(sentence: "Olá, meu nome é \(nome)")
+  }  
+}
+
+//criando o objeto
+let joao = pessoa(nome: "João", sexo: "M")
+let maria = pessoa(nome: "Maria", sexo: "F")
+let pedro = pessoa(nome: "Pedro", sexo: "M")
+
+joao.idade = 30
+maria.idade = 25
+pedro.idade = 1
+
+pedro.introducao()
+maria.introducao()
+joao.introducao()
+
+//animal
+class Animal {
+  var nome: String
+  var idade: Int = 0
+  var cor: String
+
+init(nome: String, cor: String){
+  self.nome = nome
+  self.cor = cor
+}
+
+func latir (sentence: String){
+  if self.nome == "cachorro"{
+    print(sentence)
+}else {
+  print("Esse animal não late")
+  }
+}
+  
+func emitirSom(){
+  latir(sentence: "auau")
+  }
+}
+
+var passaro = Animal(nome: "passaro", cor: "azul")
+var cavalo = Animal(nome: "cavalo", cor: "preto")
+var cachorro = Animal(nome: "cachorro", cor: "caramelo")
+
+passaro.idade = 2
+cavalo.idade = 4
+cachorro.idade = 4
+
+passaro.emitirSom()
+cavalo.emitirSom()
+cachorro.emitirSom()
+
+
+
+
+//Criando Struct:
+struct ContaCorrente {
+  var saldo = 0.00
+  
+  mutating func sacar(_ valor: Double) {
+    saldo -= valor  
+  }
+
+  mutating func depositar(_ valor: Double) {
+    saldo += valor
+  }
+}
+//Estanciando objeto
+var contaCorrenteDiego = ContaCorrente()
+var contaCorrenteGuilherme = ContaCorrente()
+
+contaCorrenteDiego.depositar(500)
+print(contaCorrenteDiego.saldo)
+
+contaCorrenteGuilherme.depositar(0.10)
+print(contaCorrenteGuilherme.saldo)
