@@ -1,3 +1,6 @@
+//var em classe são propriedades.
+//metodo construtor, obrigatorio nas propriedades que nao tem um valor!
+//função em classe são chamado de métodos.
 class pessoa {
 
   var nome: String
@@ -35,8 +38,7 @@ pedro.introducao()
 maria.introducao()
 joao.introducao()
 
-//animal
-class Animal {
+class animal {
   var nome: String
   var idade: Int = 0
   var cor: String
@@ -50,7 +52,7 @@ func latir (sentence: String){
   if self.nome == "cachorro"{
     print(sentence)
 }else {
-  print("Esse animal não late")
+  print("Esse animal não lati")
   }
 }
   
@@ -59,9 +61,9 @@ func emitirSom(){
   }
 }
 
-var passaro = Animal(nome: "passaro", cor: "azul")
-var cavalo = Animal(nome: "cavalo", cor: "preto")
-var cachorro = Animal(nome: "cachorro", cor: "caramelo")
+var passaro = animal(nome: "passaro", cor: "azul")
+var cavalo = animal(nome: "cavalo", cor: "preto")
+var cachorro = animal(nome: "cachorro", cor: "caramelo")
 
 passaro.idade = 2
 cavalo.idade = 4
@@ -90,8 +92,21 @@ struct ContaCorrente {
 var contaCorrenteDiego = ContaCorrente()
 var contaCorrenteGuilherme = ContaCorrente()
 
-contaCorrenteDiego.depositar(500)
+contaCorrenteDiego.depositar(0)
 print(contaCorrenteDiego.saldo)
 
-contaCorrenteGuilherme.depositar(0.10)
+contaCorrenteGuilherme.depositar(500.10)
 print(contaCorrenteGuilherme.saldo)
+
+// Solicita ao usuário que digite algo
+func getInput() -> String {
+    print("Digite algo:")
+    let input = readLine() ?? ""
+    return input
+}
+
+let userInput = getInput()
+print("Você digitou: \(userInput)")
+
+
+
